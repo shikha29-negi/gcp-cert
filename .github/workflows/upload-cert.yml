@@ -29,9 +29,6 @@ jobs:
     - name: Set up gcloud
       uses: google-github-actions/setup-gcloud@v2
 
-    - name: Enable Secret Manager API (optional, one-time)
-      run: gcloud services enable secretmanager.googleapis.com
-
     - name: Create the secret if it doesn't exist
       run: |
         if ! gcloud secrets describe my-cert-secret; then
